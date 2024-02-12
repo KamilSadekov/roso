@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 
 import cc from 'classcat';
+import { Header } from '~/components/header/header';
 
 export interface Meta {
   meta: {
@@ -34,8 +35,9 @@ export const MainLayout = ({
 
     <div
       id='main_container'
-      className={cc(['relative h-full w-full flex-1'])}
+      className={cc(['relative h-full w-full flex-1 px-5'])}
     >
+      <Header />
       {children}
     </div>
   </>

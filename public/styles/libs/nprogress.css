@@ -3,7 +3,7 @@
 }
 
 #nprogress .bar {
-  @apply fixed z-[1031] top-0 left-0 w-full h-0.5;
+  @apply fixed z-[1031] top-0 left-0 w-full h-0.5 bg-blue-800;
 }
 
 #nprogress .peg {
