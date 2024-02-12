@@ -6,33 +6,39 @@ import { EffectorNext } from '@effector/next';
 import { QueryClient } from '@tanstack/query-core';
 import { HydrationBoundary, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import dayjs from 'dayjs';
 import NProgress from 'nprogress';
+
 
 import '../../public/styles/app.css';
 
-export default function MyApp({
-  Component,
-  pageProps,
-}: AppProps<{
+import 'dayjs/locale/ru';
+
+dayjs.locale('ru');
+
+export default function App({
+                              Component,
+                              pageProps,
+                            }: AppProps<{
   dehydratedState: unknown;
   initialState: Record<string, unknown>;
+  values: Record<string, unknown>;
 }>) {
   const router = useRouter();
 
+
   const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            gcTime: 5 * 60 * 1000,
-            refetchOnMount: false,
-            refetchOnReconnect: false,
-            refetchOnWindowFocus: false,
-            retry: 0,
-            staleTime: 60 * 60 * 1000,
-          },
-        },
-      }),
+      () =>
+          new QueryClient({
+            defaultOptions: {
+              queries: {
+                refetchOnMount: false,
+                refetchOnReconnect: false,
+                refetchOnWindowFocus: false,
+                retry: 0,
+              },
+            },
+          }),
   );
 
   useEffect(() => {
@@ -51,14 +57,15 @@ export default function MyApp({
   }, [router.events]);
 
   return (
-    <EffectorNext values={pageProps.initialState}>
-      <QueryClientProvider client={queryClient}>
-        <HydrationBoundary state={pageProps.dehydratedState}>
-          <ReactQueryDevtools />
-
-          <Component {...pageProps} />
-        </HydrationBoundary>
-      </QueryClientProvider>
-    </EffectorNext>
+      <EffectorNext values={pageProps.values}>
+          <QueryClientProvider client={queryClient}>
+            <HydrationBoundary state={pageProps.dehydratedState}>
+              <Component
+                  {...pageProps}
+              />
+              <ReactQueryDevtools buttonPosition='bottom-left' />
+            </HydrationBoundary>
+          </QueryClientProvider>
+      </EffectorNext>
   );
 }
