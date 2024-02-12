@@ -2,6 +2,8 @@ import { MainLayout } from '~/containers/main-layout';
 
 export default function Page() {
   return (
-    <MainLayout meta={{ description: 'RESO', title: 'RESO' }}></MainLayout>
+    <MainLayout meta={{ description: 'RESO', title: 'RESO' }}>
+      <div className='h-full w-full'></div>
+    </MainLayout>
   );
 }

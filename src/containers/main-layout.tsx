@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { Head } from 'next/document';
+import Head from 'next/head';
 
 import cc from 'classcat';
 
@@ -34,7 +34,7 @@ export const MainLayout = ({
 
     <div
       id='main_container'
-      className={cc(['relative h-full w-full flex-1 pb-4 max-md:pt-4 '])}
+      className={cc(['relative h-full w-full flex-1'])}
     >
       {children}
     </div>
