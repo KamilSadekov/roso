@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { appWithTranslation } from 'next-i18next';
 
 import { EffectorNext } from '@effector/next';
 import { QueryClient } from '@tanstack/query-core';
@@ -66,4 +65,4 @@ function App({
     </EffectorNext>
   );
 }
-export default appWithTranslation(App);
+export default App;

@@ -1,15 +1,14 @@
 import { MainLayout } from '~/containers/main-layout';
-import { useTranslation } from 'next-i18next';
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Page() {
-  const { t, i18n } = useTranslation('common');
+  const t = useTranslation('common');
 
-  console.log('Current language:', i18n.language);
-  console.log('Current language:', i18n);
+  console.log('Current language:', t);
   return (
     <MainLayout meta={{ description: 'ROSO', title: 'ROSO' }}>
       <div className='h-full w-full'>
-        <div className='h-full w-full'>{t('Home')}</div>
+        <div className='h-full w-full'>{t.t('Home')}</div>
       </div>
     </MainLayout>
   );

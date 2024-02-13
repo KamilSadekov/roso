@@ -1,4 +1,4 @@
-const { i18n } = require('./next-i18next.config');
+const nextTranslate = require('next-translate-plugin');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -9,7 +9,6 @@ const config = {
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
-  i18n,
 };
 
-module.exports = withBundleAnalyzer(config);
+module.exports = nextTranslate(withBundleAnalyzer(config));
