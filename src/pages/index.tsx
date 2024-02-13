@@ -3,8 +3,6 @@ import useTranslation from 'next-translate/useTranslation';
 
 export default function Page() {
   const t = useTranslation('common');
-
-  console.log('Current language:', t);
   return (
     <MainLayout meta={{ description: 'ROSO', title: 'ROSO' }}>
       <div className='h-full w-full'>

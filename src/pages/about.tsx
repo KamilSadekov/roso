@@ -1,15 +1,17 @@
 import { MainLayout } from '~/containers/main-layout';
+import useTranslation from 'next-translate/useTranslation';
 import cc from 'classcat';
 
 export default function Page() {
   const headingStyle = 'text-4xl';
   const pStyle = 'mt-5 mb-2';
+  const { t } = useTranslation('common');
 
   return (
     <MainLayout meta={{ description: 'RESO', title: 'RESO' }}>
       <div className='mx-auto flex h-full w-full max-w-[1200px] flex-col items-center justify-start'>
         <article>
-          <h1 className={cc(['mt-10', headingStyle])}>ABOUT US</h1>
+          <h1 className={cc(['mt-10', headingStyle])}>{t('about_us')}</h1>
           <p className={cc([pStyle])}>
             Our solutions ensure that the air in rooms is cleaner, that pumps
             suck and that pipelines remain hermetically sealed. And these are
