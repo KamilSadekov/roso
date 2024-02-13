@@ -9,6 +9,7 @@ const config = {
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
+  defaultLocale: 'en',
 };
 
 module.exports = nextTranslate(withBundleAnalyzer(config));

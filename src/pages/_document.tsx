@@ -6,7 +6,7 @@ export default function Document() {
   return (
     <Html
       className='flex h-full flex-col font-sans text-base antialiased'
-      lang='ru'
+      lang='en'
       prefix='og: http://ogp.me/ns#'
     >
       <Head>
