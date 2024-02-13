@@ -9,36 +9,34 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import dayjs from 'dayjs';
 import NProgress from 'nprogress';
 
-
 import '../../public/styles/app.css';
 
 import 'dayjs/locale/ru';
 
 dayjs.locale('ru');
 
-export default function App({
-                              Component,
-                              pageProps,
-                            }: AppProps<{
+function App({
+  Component,
+  pageProps,
+}: AppProps<{
   dehydratedState: unknown;
   initialState: Record<string, unknown>;
   values: Record<string, unknown>;
 }>) {
   const router = useRouter();
 
-
   const [queryClient] = useState(
-      () =>
-          new QueryClient({
-            defaultOptions: {
-              queries: {
-                refetchOnMount: false,
-                refetchOnReconnect: false,
-                refetchOnWindowFocus: false,
-                retry: 0,
-              },
-            },
-          }),
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnMount: false,
+            refetchOnReconnect: false,
+            refetchOnWindowFocus: false,
+            retry: 0,
+          },
+        },
+      }),
   );
 
   useEffect(() => {
@@ -57,15 +55,14 @@ export default function App({
   }, [router.events]);
 
   return (
-      <EffectorNext values={pageProps.values}>
-          <QueryClientProvider client={queryClient}>
-            <HydrationBoundary state={pageProps.dehydratedState}>
-              <Component
-                  {...pageProps}
-              />
-              <ReactQueryDevtools buttonPosition='bottom-left' />
-            </HydrationBoundary>
-          </QueryClientProvider>
-      </EffectorNext>
+    <EffectorNext values={pageProps.values}>
+      <QueryClientProvider client={queryClient}>
+        <HydrationBoundary state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+          <ReactQueryDevtools buttonPosition='bottom-left' />
+        </HydrationBoundary>
+      </QueryClientProvider>
+    </EffectorNext>
   );
 }
+export default App;
