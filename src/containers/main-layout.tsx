@@ -21,7 +21,7 @@ export const MainLayout = ({
 }: PropsWithChildren<MainLayoutProps>) => (
   <>
     <Head>
-      <title>{meta.title || 'Reso'}</title>
+      <title>{meta.title || 'Roso'}</title>
       <meta
         content={meta.description}
         name='description'
@@ -31,7 +31,6 @@ export const MainLayout = ({
         name='robots'
       />
     </Head>
-
     <div
       id='main_container'
       className={cc(['relative h-full w-full flex-1'])}
