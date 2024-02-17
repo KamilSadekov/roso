@@ -16,26 +16,19 @@ import {
   TR,
   UL,
 } from '~/shred/constants/article-style';
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Page() {
+  const { t } = useTranslation('common');
+
   return (
     <MainLayout meta={{ description: 'RESO', title: 'RESO' }}>
       <div className='container mx-auto flex flex-col items-center justify-start'>
         <article>
           <div className={cc([BLOCK])}>
-            <h1 className={cc([HEADING])}>ROSO PRODUCTS</h1>
-            <h3 className={cc([H3])}>
-              Our range of unique products and solutions
-            </h3>
-            <p className={cc([P])}>
-              ROSO offers a comprehensive product portfolio that includes
-              sealing sheet material, gaskets, valves, filters, various types of
-              pumps and their spare parts for the chemical/petrochemical
-              industries, as well as related industrial measurement instruments.
-              The products are tailored to the specific requirements of the
-              customer industries and are characterized by reliability, high
-              quality and durability.
-            </p>
+            <h1 className={cc([HEADING])}>{t('products_title')}</h1>
+            <h3 className={cc([H3])}>{t('products_description')}</h3>
+            <p className={cc([P])}>{t('products_detailed_description')}</p>
           </div>
           <div className={cc([BLOCK])}>
             <h1 className={cc([HEADING])}>SHEET MATERIALS</h1>

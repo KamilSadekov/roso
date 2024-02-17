@@ -2,7 +2,13 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
-  theme: {},
+  theme: {
+    extend: {
+      backgroundImage: {
+        main_page: "url('/imgs/main_bg.jpeg')",
+      },
+    },
+  },
   variants: {
     extend: {},
     lineClamp: ['responsive', 'hover'],

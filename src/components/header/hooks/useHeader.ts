@@ -8,7 +8,11 @@ import {
 import React, { useEffect } from 'react';
 
 const useHeader = () => {
-  const optionsList = [{ value: 'en' }, { value: 'ru' }, { value: 'ar' }];
+  const optionsList = [
+    { value: 'en', title: 'ENG' },
+    { value: 'ru', title: 'RUS' },
+    { value: 'ar', title: 'ARA' },
+  ];
   const router = useRouter();
   const [language, update, reset] = useUnit([
     $language,
