@@ -1,13 +1,14 @@
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
-import logoIcon from 'public/imgs/logo_roso.svg';
-import { ROUTES } from '~/shred/constants/routes';
-import { NavItem } from '~/components/nav-item/nav-item';
-import useHeader from '~/components/header/hooks/useHeader';
 import useTranslation from 'next-translate/useTranslation';
+import { useState } from 'react';
+import useHeader from '~/components/header/hooks/useHeader';
+import { ROUTES } from '~/shred/constants/routes';
+import Link from 'next/link';
+import cc from 'classcat';
+import { NavItem } from '~/components/nav-item/nav-item';
 
 export const Header = () => {
+  const [burgerExpanded, setBurgerExpanded] = useState<boolean>(false);
+
   const { t } = useTranslation('common');
   const {
     state: { lang, optionsList },
@@ -32,19 +33,24 @@ export const Header = () => {
     },
   ];
   return (
-    <div className='flex h-[90px] w-full justify-center py-1.5'>
-      <div className='mx-auto flex w-full max-w-[1200px] justify-start'>
+    <div className='flex h-[90px] w-full justify-center md:py-1.5'>
+      <div className='relative mx-auto flex w-full max-w-[1200px] justify-start max-md:justify-between'>
         <Link
           className='h-[75px] w-[75px] self-center'
           href={'/'}
         >
-          <Image
-            className='h-full w-full'
-            src={logoIcon as unknown as string}
-            alt='roso logo'
-          />
+          {/*<Image*/}
+          {/*  className='h-full w-full'*/}
+          {/*  src={logoIcon as unknown as string}*/}
+          {/*  alt='roso logo'*/}
+          {/*/>*/}
         </Link>
-        <nav className='ml-5 flex justify-start'>
+
+        <nav
+          className={cc([
+            'absolute top-full ml-5 flex justify-start  max-md:w-full max-md:flex-col',
+          ])}
+        >
           {headerLinks.map((link, idx) => (
             <NavItem
               key={idx}
@@ -67,6 +73,27 @@ export const Header = () => {
             </option>
           ))}
         </select>
+        <button
+          className='relative mb-auto mt-auto h-[1.875rem] w-8 bg-gray-400'
+          onClick={() => setBurgerExpanded((burgerExpanded) => !burgerExpanded)}
+        >
+          <div
+            className={cc([
+              'absolute top-0 h-1.5 w-8 bg-blue-400 transition-all',
+              {
+                '!-left-[2.3px] !top-[10.7px] rotate-45': burgerExpanded,
+              },
+            ])}
+          ></div>
+          <div
+            className={cc([
+              'absolute bottom-0 top-0 mb-auto mt-auto h-1.5 w-8 bg-blue-400',
+            ])}
+          ></div>
+          <div
+            className={cc(['absolute bottom-0 h-1.5 w-8 bg-blue-400'])}
+          ></div>
+        </button>
       </div>
     </div>
   );
