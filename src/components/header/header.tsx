@@ -7,7 +7,8 @@ import cc from 'classcat';
 import { NavItem } from '~/components/nav-item/nav-item';
 
 export const Header = () => {
-  const [burgerExpanded, setBurgerExpanded] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-blue-800 transition ease transform duration-300`;
 
   const { t } = useTranslation('common');
   const {
@@ -48,7 +49,8 @@ export const Header = () => {
 
         <nav
           className={cc([
-            'absolute top-full ml-5 flex justify-start  max-md:w-full max-md:flex-col',
+            'ml-5 flex justify-start overflow-hidden bg-white transition-all duration-300 max-md:absolute max-md:-left-[1.25rem] max-md:top-full max-md:ml-auto max-md:mr-auto max-md:h-0 max-md:w-screen max-md:flex-col  max-md:after:absolute max-md:after:top-0 max-md:after:h-[1px] max-md:after:w-full max-md:after:bg-blue-800',
+            { 'max-md:!h-[200px]': isOpen },
           ])}
         >
           {headerLinks.map((link, idx) => (
@@ -74,25 +76,28 @@ export const Header = () => {
           ))}
         </select>
         <button
-          className='relative mb-auto mt-auto h-[1.875rem] w-8 bg-gray-400'
-          onClick={() => setBurgerExpanded((burgerExpanded) => !burgerExpanded)}
+          className='group mb-auto mt-auto flex h-12 w-12 flex-col items-center justify-center md:hidden'
+          onClick={() => setIsOpen(!isOpen)}
         >
           <div
-            className={cc([
-              'absolute top-0 h-1.5 w-8 bg-blue-400 transition-all',
-              {
-                '!-left-[2.3px] !top-[10.7px] rotate-45': burgerExpanded,
-              },
-            ])}
-          ></div>
+            className={`${genericHamburgerLine} ${
+              isOpen
+                ? 'translate-y-3 rotate-45 opacity-50 group-hover:opacity-100'
+                : 'opacity-50 group-hover:opacity-100'
+            }`}
+          />
           <div
-            className={cc([
-              'absolute bottom-0 top-0 mb-auto mt-auto h-1.5 w-8 bg-blue-400',
-            ])}
-          ></div>
+            className={`${genericHamburgerLine} ${
+              isOpen ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'
+            }`}
+          />
           <div
-            className={cc(['absolute bottom-0 h-1.5 w-8 bg-blue-400'])}
-          ></div>
+            className={`${genericHamburgerLine} ${
+              isOpen
+                ? '-translate-y-3 -rotate-45 opacity-50 group-hover:opacity-100'
+                : 'opacity-50 group-hover:opacity-100'
+            }`}
+          />
         </button>
       </div>
     </div>
