@@ -13,7 +13,7 @@ export default function Page() {
 
   return (
     <MainLayout meta={{ description: 'RESO', title: 'RESO' }}>
-      <div className='mx-auto flex h-full w-full max-w-[1200px] flex-col items-center justify-start'>
+      <div className='container mx-auto flex flex-col items-center justify-start'>
         <article>
           <div className={cc([blocksStyle])}>
             <h1 className={cc([headingStyle])}>ROSO PRODUCTS</h1>

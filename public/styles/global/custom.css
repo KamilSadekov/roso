@@ -2,6 +2,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.container {
+  @apply w-full px-5 mx-auto max-w-[1220px] md:px-8;
+}
+
 #__next {
   @apply flex flex-1 flex-col overflow-x-hidden;
 }
@@ -25,6 +29,5 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   box-shadow: 0 0 0 1000px #16171D inset;
   transition: background-color 5000s ease-in-out 0s;
-
   -webkit-text-fill-color: white;
 }

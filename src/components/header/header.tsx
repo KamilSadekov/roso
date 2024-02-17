@@ -1,5 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useState } from 'react';
+import logoIcon from 'public/imgs/logo_roso.svg';
+import Image from 'next/image';
 import useHeader from '~/components/header/hooks/useHeader';
 import { ROUTES } from '~/shred/constants/routes';
 import Link from 'next/link';
@@ -34,17 +36,17 @@ export const Header = () => {
     },
   ];
   return (
-    <div className='flex h-[90px] w-full justify-center md:py-1.5'>
+    <div className='container flex h-[90px] w-full justify-center md:py-1.5'>
       <div className='relative mx-auto flex w-full max-w-[1200px] justify-start max-md:justify-between'>
         <Link
           className='h-[75px] w-[75px] self-center'
           href={'/'}
         >
-          {/*<Image*/}
-          {/*  className='h-full w-full'*/}
-          {/*  src={logoIcon as unknown as string}*/}
-          {/*  alt='roso logo'*/}
-          {/*/>*/}
+          <Image
+            className='h-full w-full'
+            src={logoIcon as unknown as string}
+            alt='roso logo'
+          />
         </Link>
 
         <nav

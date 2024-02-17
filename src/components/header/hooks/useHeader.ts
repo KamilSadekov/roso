@@ -5,7 +5,7 @@ import {
   resetLanguage,
   updateLanguage,
 } from '~/shred/models/language';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const useHeader = () => {
   const optionsList = [{ value: 'en' }, { value: 'ru' }, { value: 'ar' }];
@@ -19,7 +19,7 @@ const useHeader = () => {
     update(e.target.value);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     router.push(
       {
         pathname: router.pathname,

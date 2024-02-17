@@ -9,7 +9,7 @@ export default function Page() {
 
   return (
     <MainLayout meta={{ description: 'ROSO', title: 'ROSO' }}>
-      <div className='mx-auto flex h-full w-full max-w-[1200px] flex-col items-center justify-start'>
+      <div className='container mx-auto flex flex-col items-center justify-start'>
         <article>
           <h1 className={cc(['mt-10', headingStyle])}>{t('about_us')}</h1>
           <p className={cc([pStyle])}>{t('our_solution')}</p>
