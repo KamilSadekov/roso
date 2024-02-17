@@ -34,7 +34,7 @@ export const MainLayout = ({
     </Head>
     <div
       id='main_container'
-      className={cc(['relative h-full w-full px-5'])}
+      className={cc(['relative h-screen w-screen px-5'])}
     >
       <Header />
       {children}
