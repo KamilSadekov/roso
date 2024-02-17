@@ -82,23 +82,26 @@ export const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
         >
           <div
-            className={`${genericHamburgerLine} ${
-              isOpen
-                ? 'translate-y-3 rotate-45 opacity-50 group-hover:opacity-100'
-                : 'opacity-50 group-hover:opacity-100'
-            }`}
+            className={cc([
+              genericHamburgerLine,
+              { 'translate-y-3 rotate-45': isOpen },
+            ])}
           />
           <div
-            className={`${genericHamburgerLine} ${
-              isOpen ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'
-            }`}
+            className={cc([
+              genericHamburgerLine,
+              {
+                'opacity-0': isOpen,
+              },
+            ])}
           />
           <div
-            className={`${genericHamburgerLine} ${
-              isOpen
-                ? '-translate-y-3 -rotate-45 opacity-50 group-hover:opacity-100'
-                : 'opacity-50 group-hover:opacity-100'
-            }`}
+            className={cc([
+              genericHamburgerLine,
+              {
+                '-translate-y-3 -rotate-45': isOpen,
+              },
+            ])}
           />
         </button>
       </div>
