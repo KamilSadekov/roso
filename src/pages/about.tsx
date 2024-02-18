@@ -13,6 +13,14 @@ export default function Page() {
       <div className='container mx-auto flex flex-col items-center justify-start'>
         <article>
           <SolutionBlock />
+          <div className='mt-10 h-[66vh] w-full'>
+            <embed
+              src='/preza.pdf'
+              type='application/pdf'
+              width='100%'
+              height='100%'
+            />
+          </div>
           <h2 className='mb-5 mt-10 text-2xl font-bold text-blue-800 max-sm:text-xl'>
             {t('in_depth')}
           </h2>

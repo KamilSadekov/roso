@@ -37,7 +37,7 @@ export const Header = () => {
   ];
   return (
     <div className='container flex h-[90px] w-full justify-center md:py-1.5'>
-      <div className='relative mx-auto flex w-full max-w-[1200px] justify-start max-md:justify-between'>
+      <div className='relative mx-auto flex w-full max-w-[1200px] justify-start pb-0.5 max-md:justify-between'>
         <Link
           className='h-[75px] w-[75px] self-center'
           href={'/'}
@@ -51,7 +51,7 @@ export const Header = () => {
 
         <nav
           className={cc([
-            'ml-5 flex justify-start overflow-hidden bg-white transition-all duration-300 max-md:absolute max-md:-left-[1.25rem] max-md:top-full max-md:ml-auto max-md:mr-auto max-md:h-0 max-md:w-screen max-md:flex-col  max-md:after:absolute max-md:after:top-0 max-md:after:h-[1px] max-md:after:w-full max-md:after:bg-blue-800',
+            'z-50 ml-5 flex justify-start overflow-hidden bg-white transition-all duration-300 max-md:absolute max-md:-left-[1.25rem] max-md:top-full max-md:ml-auto max-md:mr-auto max-md:h-0 max-md:w-screen max-md:flex-col  max-md:after:absolute max-md:after:top-0 max-md:after:h-[1px] max-md:after:w-full max-md:after:bg-blue-800',
             { 'max-md:!h-[200px]': isOpen },
           ])}
         >

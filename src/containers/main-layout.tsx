@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import cc from 'classcat';
 import { Header } from '~/components/header/header';
+import { Footer } from '~/components/footer';
 
 export interface Meta {
   meta: {
@@ -34,10 +35,11 @@ export const MainLayout = ({
     </Head>
     <div
       id='main_container'
-      className={cc(['relative h-full w-full flex-1 pb-4 max-md:pt-4'])}
+      className={cc(['relative h-full w-full flex-1 max-md:pt-4'])}
     >
       <Header />
       {children}
+      <Footer />
     </div>
   </>
 );

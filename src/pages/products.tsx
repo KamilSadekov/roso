@@ -17,12 +17,13 @@ import {
   UL,
 } from '~/shred/constants/article-style';
 import useTranslation from 'next-translate/useTranslation';
+import Image from 'next/image';
 
 export default function Page() {
   const { t } = useTranslation('common');
 
   return (
-    <MainLayout meta={{ description: 'RESO', title: 'RESO' }}>
+    <MainLayout meta={{ description: 'ROSO', title: 'ROSO' }}>
       <div className='container mx-auto flex flex-col items-center justify-start'>
         <article>
           <div className={cc([BLOCK])}>
@@ -31,45 +32,15 @@ export default function Page() {
             <p className={cc([P])}>{t('products_detailed_description')}</p>
           </div>
           <div className={cc([BLOCK])}>
-            <h1 className={cc([HEADING])}>SHEET MATERIALS</h1>
-            <h2 className={cc([H2])}>
-              OUR INDUSTRY-LEADING RANGE OF SOFT SEALING MATERIALS.
-            </h2>
-            <h4 className={cc([H4])}>
-              ROSO offers a wide range of soft gasket sheets based on four
-              product groups:
-            </h4>
-            <div className={cc([LI])}>
-              1.FIBER REINFORCED GASKET SHEET MATERIALS
-            </div>
-            <p className={cc([P])}>
-              Our range of asbestos-free, calendared gasket sealing materials.
-              ROSO provides excellent resistance (e.g. temperature, mechanical
-              or chemical resistance) in the areas required by the corresponding
-              target industry. Furthermore ROSO is easy to cut, handle and fit.
-            </p>
-            <div className={cc([LI])}>2. SOFT SEALING GASKET MATERIALS</div>
-            <p className={cc([P])}>
-              PTFE-based soft sealing gasket materials guarantee ultimate
-              chemical resistance and are designed to cater for the majority of
-              gasket applications. Products from the ROSO Teflex PTFE gasket
-              material range are tailored to provide the characteristics
-              required by their target industries. Amongst others, this includes
-              tightness even at low surface pressures, high resistance against
-              strong acids or strong alkaline solutions as well as good
-              properties at medium and low temperatures.
-            </p>
-            <div className={cc([LI])}>
-              3. GRAPHITE-BASED GASKET MATERIALS AND ROSO
-            </div>
-            <p className={cc([P])}>
-              High Quality Graphite gaskets are suitable for temperatures
-              between -200 °C and up to 550 °C, and offer resistance against a
-              broad range of media. Wrapped with an anti-stick coating
-              specifically developed for this purpose ROSO graphite-based sheets
-              offer the most effective technical solutions and cost effective
-              solutions in the field.
-            </p>
+            <h1 className={cc([HEADING])}>{t('sheets')}</h1>
+            <h2 className={cc([H2])}>{t('INDUSTRY-LEADING')}</h2>
+            <h4 className={cc([H4])}>{t('ROSO-OFFERS')}</h4>
+            <div className={cc([LI])}>1.{t('FIBER-REINFORCED')}</div>
+            <p className={cc([P])}>{t('asbestos-free')}</p>
+            <div className={cc([LI])}>2.{t('Soft-Sealing')}</div>
+            <p className={cc([P])}>{t('PTFE')}</p>
+            <div className={cc([LI])}>3.{t('Graphite-Based')}</div>
+            <p className={cc([P])}>{t('Quality-Graphite')}</p>
             <div className={cc([LI])}>4. COMPRESSION PACKINGS</div>
             <p className={cc([P])}>
               Compression packings are used to provide an effective sealing
@@ -178,7 +149,7 @@ export default function Page() {
           <div className={cc([BLOCK])}>
             <h1 className={cc([HEADING])}>Metallic Gasket ROSO Types</h1>
             <div className={cc([BLOCK])}>
-              <h4 className={cc([H4])}>Spiral wound gaskets</h4>
+              <h4 className={cc([H4, 'font-bold'])}>Spiral wound gaskets</h4>
               <p className={cc([P])}>
                 Widely used throughout refineries and chemical processing
                 plants, ROSO Spiral Wound Gaskets are well-suited for power
@@ -197,9 +168,25 @@ export default function Page() {
                 requirement. For specific applications, we also offer Revoseal
                 gaskets.
               </p>
+              <div className='mx-auto my-5 w-[50%] max-md:w-full'>
+                <img
+                  src={'/imgs/1.jpeg'}
+                  alt={'photo'}
+                />
+                <img
+                  src={'/imgs/2.jpeg'}
+                  alt={'photo'}
+                />
+              </div>
             </div>
             <div className={cc([BLOCK])}>
-              <h4 className={cc([H4])}>ROSO Insulation gaskets</h4>
+              <h4 className={cc([H4, 'font-bold'])}>ROSO Insulation gaskets</h4>
+              <div className='mx-auto my-5 w-[50%]'>
+                <img
+                  src={'/imgs/3.jpeg'}
+                  alt={'photo'}
+                />
+              </div>
               <p className={cc([P])}>
                 Insulation Gasket is designed to provide chemical resistance and
                 fire safety in a single gasket. It seals to the bore of the
@@ -208,7 +195,7 @@ export default function Page() {
               </p>
             </div>
             <div className={cc([BLOCK])}>
-              <h4 className={cc([H4])}>Kammprofile gaskets</h4>
+              <h4 className={cc([H4, 'font-bold'])}>Kammprofile gaskets</h4>
               <p className={cc([P])}>
                 Gaskets provide exceptional reliability in difficult
                 applications. With a combination of serrated metallic core and
@@ -222,9 +209,25 @@ export default function Page() {
                 It also withstands temperatures from cryogenics to 2000°F /
                 1090°C, depending on sealing material and metal core.
               </p>
+              <div className='mx-auto my-5 w-[50%]'>
+                <img
+                  src={'/imgs/4.jpeg'}
+                  alt={'photo'}
+                />
+                <img
+                  src={'/imgs/5.jpeg'}
+                  alt={'photo'}
+                />
+              </div>
             </div>
             <div className={cc([BLOCK])}>
-              <h4 className={cc([H4])}>Ring type Joints</h4>
+              <h4 className={cc([H4, 'font-bold'])}>Ring type Joints</h4>
+              <div className='mx-auto my-5 w-[50%]'>
+                <img
+                  src={'/imgs/6.jpeg'}
+                  alt={'photo'}
+                />
+              </div>
             </div>
           </div>
           <div className={cc([BLOCK])}>

@@ -1,4 +1,4 @@
-export const HEADING = 'text-4xl mb-5';
+export const HEADING = 'mb-5 text-4xl font-bold text-blue-800 max-sm:text-2xl';
 export const H2 = 'text-3xl mb-3';
 export const H3 = 'text-2xl mb-3';
 export const H4 = 'text-xl mb-6';
