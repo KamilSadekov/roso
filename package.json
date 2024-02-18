@@ -1,6 +1,6 @@
 {
   "name": "kotokod_lk",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

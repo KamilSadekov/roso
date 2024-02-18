@@ -15,4 +15,3 @@ const config = {
   defaultLocale: 'en',
 };
 module.exports = nextTranslate(withBundleAnalyzer(config));
-export default config
