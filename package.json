@@ -1,8 +1,7 @@
 {
-  "name": "Roso",
+  "name": "roso",
   "private": false,
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
