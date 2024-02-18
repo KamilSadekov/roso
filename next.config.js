@@ -11,6 +11,11 @@ const config = {
   reactStrictMode: true,
   defaultLocale: 'en',
   basePath: '/roso',
+  output: {
+    // Set the directory where the exported files will be generated
+    // Adjust the path as per your project structure
+    path: '/public',
+  },
 };
 
 module.exports = nextTranslate(withBundleAnalyzer(config));
