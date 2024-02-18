@@ -6,9 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const config = {
   images: {
-    formats: ['image/avif', 'image/webp', 'image/jpeg', 'image/svg'],
     loader: 'akamai',
     path: '',
+    formats: ['image/avif', 'image/webp', 'image/jpeg', 'image/svg'],
   },
   assetPrefix: './',
   reactStrictMode: true,
@@ -20,5 +20,5 @@ const config = {
     path: '/public',
   },
 };
-
 module.exports = nextTranslate(withBundleAnalyzer(config));
+export default config
