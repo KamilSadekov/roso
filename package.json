@@ -17,7 +17,8 @@
     "test:stylelint:fix": "yarn test:stylelint --fix",
     "test:prettier": "prettier --write '**/*.{ts,tsx,json}'",
     "test:commit": "commitlint -e",
-      "deploy": "yarn && yarn buld build && gh-pages -d out"
+    "export": "next export",
+    "deploy": "yarn && yarn buld build && gh-pages -d out"
   },
   "homepage": "https://kamilsadekov.github.io/roso/",
   "browserslist": {

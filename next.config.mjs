@@ -6,8 +6,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const config = {
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp', 'image/jpeg', 'image/svg'],
+    loader: 'akamai',
+    path: '',
   },
+  assetPrefix: './',
   reactStrictMode: true,
   defaultLocale: 'en',
   basePath: '/roso',

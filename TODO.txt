@@ -1,7 +1,7 @@
 TODO:
 
 - Поправить генерация SvgSprite
-- Изучить next.config.js
+- Изучить next.config.mjs
 
 - Переезд на FSD:
 -- навести порядок в shared
