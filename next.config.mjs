@@ -1,9 +1,9 @@
 const nextTranslate = require('next-translate-plugin');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === 'false',
 });
 
-/** @type {import('next').NextConfig} */
+/** @type {{defaultLocale: string, output: {path: string}, images: {path: string, formats: (string)[], loader: string}, assetPrefix: string, basePath: string, reactStrictMode: boolean}} */
 const config = {
   images: {
     loader: 'akamai',
@@ -13,12 +13,6 @@ const config = {
   assetPrefix: './',
   reactStrictMode: true,
   defaultLocale: 'en',
-  basePath: '/roso',
-  output: {
-    // Set the directory where the exported files will be generated
-    // Adjust the path as per your project structure
-    path: '/public',
-  },
 };
 module.exports = nextTranslate(withBundleAnalyzer(config));
 export default config
