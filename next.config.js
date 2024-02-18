@@ -10,6 +10,7 @@ const config = {
   },
   reactStrictMode: true,
   defaultLocale: 'en',
+  basePath: '/roso',
 };
 
 module.exports = nextTranslate(withBundleAnalyzer(config));
