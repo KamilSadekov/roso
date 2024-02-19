@@ -8,7 +8,7 @@ const config = {
   images: {
     loader: 'akamai',
     path: '',
-    formats: ['image/avif', 'image/webp', 'image/jpeg', 'image/svg'],
+    formats: ['image/avif', 'image/webp'],
   },
   assetPrefix: './',
   reactStrictMode: true,
