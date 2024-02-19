@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "prod": "yarn && yarn test:all:fix && yarn build && yarn start",
@@ -17,10 +17,9 @@
     "test:stylelint:fix": "yarn test:stylelint --fix",
     "test:prettier": "prettier --write '**/*.{ts,tsx,json}'",
     "test:commit": "commitlint -e",
-    "export": "next export",
     "deploy": "yarn && yarn buld build && gh-pages -d out",
+    "export": "next export"
   },
-  "homepage": "https://kamilsadekov.github.io/roso/",
   "browserslist": {
     "production": [
       ">0.2%",
