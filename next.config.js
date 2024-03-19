@@ -18,11 +18,11 @@ const config = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  defaultLocale: 'en',
   experimental: {
     webpackBuildWorker: true,
   },
   reactStrictMode: true,
-  defaultLocale: 'en',
 };
 
 module.exports = nextTranslate(withBundleAnalyzer(config));
