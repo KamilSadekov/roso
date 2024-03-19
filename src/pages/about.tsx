@@ -1,7 +1,7 @@
 import { MainLayout } from '~/containers/main-layout';
 import useTranslation from 'next-translate/useTranslation';
 import cc from 'classcat';
-import { HEADING, P } from '~/shred/constants/article-style';
+import { P } from '~/shred/constants/article-style';
 import SolutionBlock from '~/components/text/solutionBlock';
 import React from 'react';
 

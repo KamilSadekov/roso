@@ -22,11 +22,6 @@ const config = {
   defaultLocale: 'en',
   basePath,
   assetPrefix,
-  output: {
-    // Set the directory where the exported files will be generated
-    // Adjust the path as per your project structure
-    path: '/out',
-  },
 };
 
 export default nextTranslate(withBundleAnalyzer(config));
