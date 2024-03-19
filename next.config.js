@@ -1,5 +1,8 @@
-import nextTranslate from 'next-translate-plugin';
-import withBundleAnalyzer from '@next/bundle-analyzer';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const nextTranslate = require('next-translate-plugin');
 
 /** @type {import('next').NextConfig} */
 //
@@ -25,4 +28,4 @@ const config = {
   defaultLocale: 'en',
 };
 
-export default nextTranslate(withBundleAnalyzer(config));
+module.exports = nextTranslate(withBundleAnalyzer(config));
