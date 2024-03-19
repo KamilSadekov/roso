@@ -18,15 +18,6 @@ const config = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:lang(en|ru|ar)/:path*',
-        destination: '/:path*',
-        locale: false,
-      },
-    ];
-  },
   defaultLocale: 'en',
   experimental: {
     webpackBuildWorker: true,
