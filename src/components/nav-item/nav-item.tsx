@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import Link from '~/components/Link';
 import cc from 'classcat';
 
 export interface NavItemProps {
@@ -26,6 +26,7 @@ export const NavItem = ({ route, title, footer = false }: NavItemProps) => {
         },
       ])}
       href={route}
+      skipLocaleHandling={true}
     >
       {title}
     </Link>

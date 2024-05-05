@@ -6,6 +6,7 @@ import { EffectorNext } from '@effector/next';
 import { QueryClient } from '@tanstack/query-core';
 import { HydrationBoundary, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { appWithTranslation } from 'next-i18next';
 import dayjs from 'dayjs';
 import NProgress from 'nprogress';
 
@@ -65,4 +66,4 @@ function App({
     </EffectorNext>
   );
 }
-export default App;
+export default appWithTranslation(App);

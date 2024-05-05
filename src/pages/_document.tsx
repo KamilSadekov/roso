@@ -1,12 +1,14 @@
 import { Head, Html, Main, NextScript } from 'next/document';
-
+import i18nextConfig from '../../next-i18next.config';
+import { $language } from '~/shred/models/language';
 import { APP_NAME } from '~/constants/app';
 
 export default function Document() {
+  const lang = $language.getState() ?? i18nextConfig.i18n.defaultLocale;
   return (
     <Html
       className='flex h-full flex-col font-sans text-base antialiased'
-      lang='en'
+      lang={lang}
       prefix='og: http://ogp.me/ns#'
     >
       <Head>
