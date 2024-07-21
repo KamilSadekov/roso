@@ -2,22 +2,16 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import logoIcon from 'public/imgs/logo_roso.svg';
 import Image from 'next/image';
-import useHeader from '~/components/header/hooks/useHeader';
 import { ROUTES } from '~/shred/constants/routes';
 import cc from 'classcat';
 import { NavItem } from '~/components/nav-item/nav-item';
 import Link from '~/components/Link';
-import LanguageSwitchLink from '~/components/LanguageSwitchLink';
 import LanguageSwitch from '~/components/LanguageSwithBtn';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-blue-800 transition ease transform duration-300`;
-
   const { t } = useTranslation('common');
-  const {
-    state: { lang, optionsList },
-  } = useHeader();
   const headerLinks = [
     {
       title: t('Home'),
