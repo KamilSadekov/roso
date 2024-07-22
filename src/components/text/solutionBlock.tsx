@@ -23,7 +23,7 @@ const SolutionBlock: React.FC<Props> = ({ isMainPage = false }) => {
           {t('about_us')}
         </h1>
       )}
-      <div className='flex justify-start gap-16'>
+      <div className='flex flex-wrap justify-start gap-16 md:flex-nowrap'>
         <span className='font-bold'>{t('our_solution')}</span>
         <span className='font-bold'>{t('in_year_rosoDescr')}</span>
       </div>

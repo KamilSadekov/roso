@@ -26,7 +26,6 @@ export default function Page() {
   return (
     <MainLayout meta={{ description: 'ROSO', title: 'ROSO' }}>
       <div className='container h-full'>
-        <div className=''></div>
         <form
           onSubmit={() => handleSubmit(onSubmit)}
           className='mx-auto mt-4 max-w-sm'
